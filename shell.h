@@ -6,4 +6,5 @@
 #include <unistd.h>
 #include <sys/wait.h>
 void get_args(char **arg);
+char *add_bin(char *arg);
 #endif

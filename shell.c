@@ -5,6 +5,7 @@
  */
 int main(void)
 {
+	// ls         /bin/ls
 
 	while (1)
 	{
@@ -17,9 +18,9 @@ int main(void)
 
 		get_args(arg);
 
-		if (!(arg[0][0] == '/' && arg[0][1] == 'b'))
-			strcat(bin, arg[0]);
-		if (access(bin, X_OK) == -1)
+		arg[0] = add_bin(arg[0]);
+
+		if (access(arg[0], X_OK) == -1)
 		{
 			printf("NOT FOUND\n");
 			continue;
@@ -29,14 +30,7 @@ int main(void)
 			return (0);
 		if (pid == 0)
 		{
-			if (arg[0][0] == '/' && arg[0][1] == 'b')
-			{
-				execve(arg[0], arg, NULL);
-			}
-			else
-			{
-				execve(bin, arg, NULL);
-			}
+			execve(arg[0], arg, NULL);
 		}
 		wait(NULL);
 	}
