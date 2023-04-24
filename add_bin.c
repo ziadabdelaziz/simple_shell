@@ -2,6 +2,7 @@
 
 /**
  * add_bin - add /bin/ if does not exist
+ * @arg: commands
  * Return: None
  */
 char *add_bin(char *arg)

@@ -2,6 +2,7 @@
 
 /**
  * check_access - check if command is available
+ * @command: command
  * Return: 1 if command is available
  * 0 if command is not available
  */

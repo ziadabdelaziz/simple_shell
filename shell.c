@@ -1,7 +1,5 @@
 #include "shell.h"
 
-extern char **environ;
-
 /**
  * main - program starting point
  * Return: 0
@@ -24,7 +22,7 @@ int main(void)
 		arg[0] = add_bin(arg[0]);
 
 		exit_shell(arg[0], arg[1]);
-		if(!check_access(arg[0]))
+		if (!check_access(arg[0]))
 			continue;
 
 		pid = fork();

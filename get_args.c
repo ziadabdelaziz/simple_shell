@@ -1,6 +1,7 @@
 #include "shell.h"
 
-/* get_args - string to list of strings
+/**
+ * get_args - string to list of strings
  * @arg: array of strings
  * Return: None
  */
@@ -13,7 +14,7 @@ void get_args(char **arg)
 	if (getline(&buf, &n, stdin) == -1)
 		exit(1);
 
-	for (token = strtok(buf,del); token; token = strtok(NULL, del))
+	for (token = strtok(buf, del); token; token = strtok(NULL, del))
 		arg[i++] = token;
 
 	arg[i] = NULL;
