@@ -18,4 +18,5 @@ void get_args(char **arg)
 		arg[i++] = token;
 
 	arg[i] = NULL;
+	free(buf);
 }

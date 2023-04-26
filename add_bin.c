@@ -11,7 +11,7 @@ char *add_bin(char *arg)
 
 	if (!(arg[0] == '/' && arg[1] == 'b'))
 	{
-		strcat(bin, arg);
+		_strncat(bin, arg, _strlen(arg));
 		arg = bin;
 	}
 	return (arg);

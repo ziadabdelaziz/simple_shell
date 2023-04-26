@@ -8,6 +8,7 @@
  */
 int check_access(char *command)
 {
+	printf("%s", command);
 	if (access(command, X_OK) == -1)
 	{
 		printf("NOT FOUND\n");

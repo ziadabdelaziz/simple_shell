@@ -6,13 +6,23 @@
  * @status: status
  * Return: None
  */
-void exit_shell(char *command, char *status)
+void exit_shell(char **command)
 {
-	if (strcmp(command, "/bin/exit") == 0)
+	int status;
+
+	printf("%s", command[0]);
+	if (_strcmp(command[0], "/bin/exit") == 0)
 	{
-		if (status)
-			exit(_atoi(status));
+		if (command[1])
+		{
+			status = _atoi(command[1]);
+			free(command);
+			exit(status);
+		}
 		else
+		{
+			free(command);
 			exit(0);
+		}
 	}
 }

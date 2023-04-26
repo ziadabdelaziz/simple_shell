@@ -21,7 +21,7 @@ int main(void)
 		get_args(arg);
 		arg[0] = add_bin(arg[0]);
 
-		exit_shell(arg[0], arg[1]);
+		exit_shell(arg);
 		if (!check_access(arg[0]))
 			continue;
 
@@ -31,6 +31,7 @@ int main(void)
 			execve(arg[0], arg, environ);
 		}
 		wait(NULL);
+		free(arg);
 	}
 	return (0);
 }
