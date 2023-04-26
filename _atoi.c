@@ -1,25 +1,36 @@
 #include "shell.h"
 /**
- * _atoi - string to int
- * @str: str
- * Return: int
+ * _atoi - converts a string into a number
+ * @s: string to be converted
+ *
+ * Return: the converted number
  */
-int _atoi(char *str)
+int _atoi(char *s)
 {
-	int i = 0, res = 0, pow = 1;
+	int n = 0;
+	int sign = 1;
+	int s_int;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{}
-	i--;
-	for (; i >= 0; i--)
+	if (*s == '=' && *(s + 1) >= '0' && *(s + 1) <= '9')
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		sign = -1;
+		s++;
+	}
+
+	while (*s != '\0')
+	{
+		if (*s >= '0' && *s <= '9')
 		{
-			res += (pow * (str[i] - '0'));
-			pow *= 10;
+			s_int = *s - 48;
+			if (sign == 1)
+				n = (n * 10) + s_int;
+			else
+				n = (n * 10) - s_int;
 		}
 		else
-			return (res);
+			return (-1);
+		s++;
 	}
-	return (res);
+
+	return (n);
 }
