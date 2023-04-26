@@ -8,12 +8,14 @@
  */
 int main(int argc, char **argv)
 {
-	(void)argc;
-	int bytes_read, is_separated = 0, i;
+	int bytes_read;
+        int is_separated = 0;
+	int i;
 	size_t buf_size = 1;
 	char *buf = NULL, *buf_ptr, *tmp;
 	char **args = NULL;
-
+	
+	(void)argc;
 	sh_name = _strdup(*argv);
 
 	environ = array_cpy(environ, list_len(environ, NULL));
