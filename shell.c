@@ -16,7 +16,7 @@ int main(void)
 		if (arg == NULL)
 			exit(1);
 
-		printf("┌──(Myshell㉿ALX)-[~]\n└─$ ");
+		printf("Theshell$ ");
 
 		get_args(arg);
 		arg[0] = add_bin(arg[0]);
